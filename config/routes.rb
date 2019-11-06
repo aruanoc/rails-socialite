@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   root to: 'events#index'
 
+  get '/action_cable_test' => 'application#action_cable_test'
+  post '/action_cable_test_broadcast' => 'application#action_cable_test_broadcast'
+
   get '/welcome' => 'application#welcome', as: :application_welcome
 
   get '/events/add' => 'events#add', as: :events_add

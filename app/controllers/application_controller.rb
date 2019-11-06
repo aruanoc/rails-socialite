@@ -3,6 +3,17 @@ class ApplicationController < ActionController::Base
 
   before_action :authorize, :except => [:welcome]
 
+  def action_cable_test
+
+  end
+
+  def action_cable_test_broadcast
+    ActionCable.server.broadcast 'rs_control', {
+      type: 'RS-Test-Message',
+      message: 'If you see this, Action Cable works!'
+    }
+  end
+
   def current_user
     if session[:account_type]
       @account_type = session[:account_type]

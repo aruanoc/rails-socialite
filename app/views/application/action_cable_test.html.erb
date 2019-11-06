@@ -1,0 +1,13 @@
+<div id="test_holder" class="events index">
+  <h3>ACTION CABLE TEST</h3>
+  <br/>
+  <div><button id="ac_test_btn">Test</button></div>
+  <br/>
+  <div id="message_holder">Click Above To Test.</div>
+</div>
+<script>
+  $('#test_holder').action_cable_test_control({
+    test_btn_id: '#ac_test_btn',
+    message_holder_id: '#message_holder'
+  });
+</script>
